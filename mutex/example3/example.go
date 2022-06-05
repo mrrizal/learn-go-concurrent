@@ -1,4 +1,4 @@
-package example2
+package example3
 
 import (
 	"fmt"
@@ -8,26 +8,31 @@ import (
 type Account struct {
 	balance int
 	name    string
-	lock    sync.Mutex
+	lock    sync.RWMutex
 }
 
 func (a *Account) Withdraw(wg *sync.WaitGroup, amount int) {
 	defer wg.Done()
+
 	a.lock.Lock()
+	defer a.lock.Unlock()
 	a.balance -= amount
-	a.lock.Unlock()
+
 }
 
 func (a *Account) Deposit(wg *sync.WaitGroup, acmount int) {
 	defer wg.Done()
+
 	a.lock.Lock()
+	defer a.lock.Unlock()
 	a.balance += acmount
-	a.lock.Unlock()
+
 }
 
 func (a *Account) GetBalance() int {
-	a.lock.Lock()
-	defer a.lock.Unlock()
+	defer a.lock.RUnlock()
+
+	a.lock.RLock()
 	return a.balance
 }
 
