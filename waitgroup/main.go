@@ -46,6 +46,8 @@ func example2() {
 }
 
 func main() {
+	// use waitgroup if you dont care about the result, or you have another mean to collect it.
+	// see the book for more detail
 	example1()
 	example2()
 }
