@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/mrrizal/learn-go-concurrent-cond/example1"
-)
+import "github.com/mrrizal/learn-go-concurrent-cond/example2"
 
 func main() {
 	/*
@@ -18,5 +16,8 @@ func main() {
 	*/
 
 	// this one using signal
-	example1.Example()
+	// example1.Example()
+
+	// this using broadcast
+	example2.Example()
 }
