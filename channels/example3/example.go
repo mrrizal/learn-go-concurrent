@@ -2,7 +2,7 @@ package example3
 
 import "fmt"
 
-func Example() {
+func BufferedChannel() {
 	intStream := make(chan int, 4)
 	fmt.Println(cap(intStream))
 

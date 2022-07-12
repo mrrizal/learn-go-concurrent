@@ -1,16 +1,13 @@
 package main
 
-import (
-	"github.com/mrrizal/learn-go-concurrent/channels/example3"
-)
+import "github.com/mrrizal/learn-go-concurrent/channels/example4"
 
 func main() {
-	// unbuffered channel
-	// example1.Example()
+	// example1.UnBufferedChannel()
+
 	// example2.Example()
 
-	// buffered channel
-	example3.Example()
+	// example3.BufferedChannel()
 
 	/*
 		here the main different between buffered and unbuffered channels:
@@ -34,6 +31,7 @@ func main() {
 			received 6
 			received 7
 			```
-
 	*/
+
+	example4.UniDirectionalChannel()
 }

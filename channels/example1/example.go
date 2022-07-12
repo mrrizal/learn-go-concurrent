@@ -2,7 +2,7 @@ package example1
 
 import "fmt"
 
-func Example() {
+func UnBufferedChannel() {
 	// unbuffered channel
 	intStream := make(chan int)
 	go func() {
